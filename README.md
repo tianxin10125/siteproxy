@@ -18,6 +18,7 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 ## 目录
 
 - [特点](#特点)
+- [使用技巧](#使用技巧)
 - [部署到cloudflare_worker](#部署到cloudflare_worker)
 - [部署到vps或者云服务器](#部署到vps或者云服务器)
 - [cloudflare_worker_deployment](#cloudflare_worker_deployment)
@@ -29,9 +30,15 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 - 支持cloudflare worker部署。
 - 支持密码控制代理，知道密码才能访问代理。
 - 不需要客户端的任何配置，访问代理网址即可访问全世界。
-- 支持telegram web登录。
+- 支持github和telegram web登录。
 - enter siteproxy's address, and go surf on internet without censorship
 - no proxy setting from client side is needed. zero configuration from client browser
+
+### 使用技巧
+1. 可以通过部署的siteproxy进行git clone，方法:
+```
+git clone https://your-proxy-domain.name/user-your-password/https/github.com/the-repo-to-clone
+```
 
 ### 部署到cloudflare_worker
 ```
