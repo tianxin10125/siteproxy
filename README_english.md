@@ -1,6 +1,6 @@
 # Siteproxy 2.0
 <br />
-Siteproxy 2.0 utilizes service workers, making the proxy more stable and capable of handling more websites. It replaces Express with Hono to achieve a fourfold speed increase and supports deployment on Cloudflare Workers. It provides a reverse proxy, allowing access to YouTube/Google without needing to bypass internet censorship, and supports GitHub and Telegram web logins. This online proxy operates entirely within web pages, requiring no client configuration, and provides reverse proxy access to the internet.
+Siteproxy 2.0 uses a service worker to make the proxy more stable, enabling it to support a wider range of websites. It replaces Express with Hono, which increases the speed by four times. It supports deployment on Cloudflare Workers. This reverse proxy allows for the access to YouTube/Google without the need for a VPN, and supports login for GitHub and Telegram web (please be cautious not to log in through untrusted proxies). It's a purely web-based online proxy that requires no configuration on the client's side, acting as a reverse proxy to the internet.
 <br />
 ```
                                                  +----> google/youtube
@@ -22,13 +22,14 @@ Please do not use this project for illegal purposes, or you will bear the conseq
 - [Contact Information](#contact-information)
 
 ### Features
-- Replaces Express with Hono, increasing speed by four times.
-- Supports deployment on Cloudflare Worker.
-- Supports password-controlled access to the proxy; only those with the password can access it.
-- Requires no configuration on the client side; accessing the proxy URL grants access to the whole world.
-- Supports GitHub and Telegram web logins.
-- Entering the URL of the deployed Siteproxy allows access to the entire world while hiding your IP.
-- No software installation is required on the client side, nor does the client browser need any configuration.
+- Replaces Express with Hono, improving speed by four times.
+- Supports deployment on Cloudflare Workers.
+- Supports password-controlled access to the proxy; only those with the password can access the proxy.
+- No configuration is required on the client side; simply access the proxy URL to reach the entire world.
+- Supports login for GitHub and Telegram web.
+- Uses RSA+AES encryption to protect user login passwords to reduce the risk of man-in-the-middle attacks.
+- By entering the deployed Siteproxy proxy URL, you can access the entire world and hide your IP.
+- No software installation is required on the client side, and the client's browser does not need any configuration.
 
 ### Usage Tips
 1. You can use the deployed Siteproxy to perform a git clone, for example:
