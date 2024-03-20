@@ -81,9 +81,10 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
       "token_prefix": "/user-SetYourPasswordHere/",  // 这个实际上是你的网站密码，用来防止非法访问,注意保留首尾的斜杠。
       "description": "注意:token_prefix相当于网站密码，请谨慎设置。 proxy_url和token_prefix合起来就是访问网址。"
    }
-7. 执行:nohup node bundle.js &
-8. 现在就可以在浏览器中访问你的域名了, 网址就是前面的proxy_url加上token_prefix.
-9. 如果想套CloudFlare加速, 可以参考CloudFlare说明
+7. 安装forever: npm install -g forever;
+8. 执行:forever stopall; forever start bundle.js
+9. 现在就可以在浏览器中访问你的域名了, 网址就是前面的proxy_url加上token_prefix.
+10. 如果想套CloudFlare加速, 可以参考CloudFlare说明
 ```
 ### docker部署
 ```
