@@ -17,6 +17,8 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
                                                  +----> chinese forums
 ```
 请勿将本项目用于非法用途，否则后果自负。
+<br>
+注意： 由于支持多个网站的login，为了减少钓鱼风险，siteproxy2.0代码进行了混淆，同时禁止了默认主页网址的修改。
 
 ## 目录
 
