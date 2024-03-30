@@ -13,12 +13,15 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 ```
 <br />
 Please do not use this project for illegal purposes, or you will bear the consequences.
+<br />
+Note: To reduce the risk of phishing, the code of siteproxy 2.0 is obfuscated, and the modification of the default homepage URL is prohibited.
 
 ## Contents
 - [Features](#features)
 - [Usage Tips](#usage-tips)
 - [Deploying to Cloudflare Worker](#deploying-to-cloudflare-worker)
 - [Deploying to VPS or Cloud Server](#deploying-to-vps-or-cloud-server)
+- [Docker deployment](#docker-deployment)
 - [Contact Information](#contact-information)
 
 ### Features
@@ -76,6 +79,19 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
 7. Execute: nohup node bundle.js &
 8. You can now access your domain in the browser, using the earlier mentioned proxy_url combined with the token_prefix.
 9. For Cloudflare acceleration, refer to Cloudflare documentation.
+```
+### Docker deployment
+```
+1. Configure the domain's SSL certificate and nginx, directing it to the local port 5006.
+2. Git clone this project.
+3. Open and modify the config.json file then save it:
+   {
+      "proxy_url": "https://your-proxy.domain.name", // This is the domain name of your proxy server
+      "token_prefix": "/user-SetYourPasswordHere/",  // This is essentially your website password, used to prevent unauthorized access. Be sure to retain the slashes at the start and end.
+      "description": "Note: The token_prefix acts as a website password, please set it carefully. The proxy_url combined with the token_prefix forms the access URL."
+   }
+4. Enter the docker-node subdirectory. sudo docker compose up
+5. Now, you can directly access https://your-proxy-domain.name/user-your-password/, and it should work. Note that you should replace the domain and password with your own.
 ```
 ### Contact Information
 Telegram group: @siteproxy
