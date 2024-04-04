@@ -47,9 +47,6 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
    server {
       server_name your-proxy.domain.name
       location / {
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
         proxy_pass       http://localhost:5006;
       }
    }
@@ -60,15 +57,18 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
    (3) nvm install v18
 4. Execute: git clone https://github.com/netptop/siteproxy.git;
 5. Execute: cd siteproxy;
-6. Open and modify the config.json file, saving it:
+6. Test if it can run: node bundle.js, if there are no errors, end the program with Ctrl+C.
+7. Open and modify the config.json file, saving it:
    {
       "proxy_url": "https://your-proxy.domain.name", // This is your proxy server domain
       "token_prefix": "/user-SetYourPasswordHere/",  // This acts as your site password to prevent unauthorized access. Keep the slashes at the start and end.
+      "local_listen_port": 5006, // Do not modify this, to keep it consistent with the previous nginx configuration.
       "description": "Note: The token_prefix acts as the site password. Please set it carefully. The proxy_url combined with the token_prefix forms the access URL."
    }
-7. Execute: nohup node bundle.js &
-8. You can now access your domain in the browser, using the earlier mentioned proxy_url combined with the token_prefix.
-9. For Cloudflare acceleration, refer to Cloudflare documentation.
+8. Install forever: npm install -g forever;
+9 .Execute: forever stopall; forever start bundle.js
+10. Now you can access your domain in the browser, the URL is the aforementioned proxy_url followed by token_prefix.
+11. If you want to use CloudFlare for acceleration, you can refer to the CloudFlare instructions.
 ```
 ### Docker deployment
 ```

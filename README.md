@@ -62,9 +62,6 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
    server {
       server_name your-proxy.domain.name
       location / {
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
         proxy_pass       http://localhost:5006;
       }
    }
@@ -75,16 +72,18 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
    (3)nvm install v18
 4. 执行:git clone https://github.com/netptop/siteproxy.git;
 5. 执行:cd siteproxy;
-6. 打开并修改保存config.json文件:
+6. 测试是否能运行： node bundle.js, 如果没有错误，按ctrl+c结束程序。 
+7. 打开并修改保存config.json文件:
    {
       "proxy_url": "https://your-proxy.domain.name", // 这个是你申请到的代理服务器域名
       "token_prefix": "/user-SetYourPasswordHere/",  // 这个实际上是你的网站密码，用来防止非法访问,注意保留首尾的斜杠。
+      "local_listen_port": 5006, // 这个不要修改， 以便和前面nginx配置一致。
       "description": "注意:token_prefix相当于网站密码，请谨慎设置。 proxy_url和token_prefix合起来就是访问网址。"
    }
-7. 安装forever: npm install -g forever;
-8. 执行:forever stopall; forever start bundle.js
-9. 现在就可以在浏览器中访问你的域名了, 网址就是前面的proxy_url加上token_prefix.
-10. 如果想套CloudFlare加速, 可以参考CloudFlare说明
+8. 安装forever: npm install -g forever;
+9. 执行:forever stopall; forever start bundle.js
+10. 现在就可以在浏览器中访问你的域名了, 网址就是前面的proxy_url加上token_prefix.
+11. 如果想套CloudFlare加速, 可以参考CloudFlare说明
 ```
 ### docker部署
 ```
