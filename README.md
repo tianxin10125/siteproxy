@@ -57,7 +57,7 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
 ### 部署到vps或者云服务器
 ```
 1. 创建一个ssl website(使用certbot and nginx, google下用法), 配置nginx,
-   /etc/nginx/sites-enabled/default 需要包含以下内容:
+   /etc/nginx/conf.d/default.conf需要包含以下内容:
    ...
    server {
       server_name your-proxy.domain.name

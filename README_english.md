@@ -42,7 +42,7 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
 
 ### Deploying to VPS or Cloud Server
 ```
-1. Set up an SSL website (using Certbot and Nginx, Google for instructions) and configure Nginx. Your /etc/nginx/sites-enabled/default should include the following:
+1. Set up an SSL website (using Certbot and Nginx, Google for instructions) and configure Nginx. Your /etc/nginx/conf.d/default.conf should include the following:
    ...
    server {
       server_name your-proxy.domain.name
