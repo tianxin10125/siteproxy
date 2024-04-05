@@ -31,14 +31,12 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
 ```
 
 ### Deploying to Cloudflare Worker
-```
-1. Assume your domain is already managed under Cloudflare (in case you want to use your domain name)
-2. Git clone this project and use a text editor to open build/worker.js (you can also download this file directly without cloning)
-3. Search for the string http://localhost:5006 and replace it with your proxy website domain, such as https://your-proxy-domain.name. Also, search for user22334455 and change it to a password of your choosing.
-4. Create a worker and edit it by copying and pasting the modified worker.js into the worker, then save and deploy.
-5. If you use cloudflare worker domain, skip this step, If you want to use your own domain name, on the Workers & Pages page, open the worker you just saved, click 'Triggers' at the top, then 'Add custom domain', setting it to your proxy domain.
-6. Now you can directly access https://your-proxy-domain.name/user-your-password/, don't miss the last '/' please. And please replace the domain and password with your own.
-```
+- Assume your domain is already managed under Cloudflare (in case you want to use your domain name)
+- Git clone this project and use a text editor to open build/worker.js (you can also download this file directly without cloning)
+- Search for the string http://localhost:5006 and replace it with your proxy website domain, such as https://your-proxy-domain.name. Also, search for user22334455 and change it to a password of your choosing.
+- Create a worker and edit it by copying and pasting the modified worker.js into the worker, then save and deploy.
+- If you use cloudflare worker domain, skip this step, If you want to use your own domain name, on the Workers & Pages page, open the worker you just saved, click 'Triggers' at the top, then 'Add custom domain', setting it to your proxy domain.
+- Now you can directly access https://your-proxy-domain.name/user-your-password/, don't miss the last '/' please. And please replace the domain and password with your own.
 
 ### Deploying to VPS or Cloud Server
 ```
