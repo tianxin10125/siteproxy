@@ -33,7 +33,7 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
 ### Deploying to Cloudflare Worker
 - Assume your domain is already managed under Cloudflare (in case you want to use your domain name)
 - Git clone this project and use a text editor to open build/worker.js (you can also download this file directly without cloning)
-- Search for the string http://localhost:5006 and replace it with your proxy website domain, such as https://your-proxy-domain.name. Must be https please. Also, search for user22334455 and change it to a password of your choosing.
+- Search for the string http://localhost:5006 and replace it with your proxy website domain, such as https://your-proxy-domain.name. Must be https please. Also, search for user22334455 and change it to a password of your choosing, empty password means no password is needed.
 - Create a worker and edit it by copying and pasting the modified worker.js into the worker, then save and deploy.
 - If you use cloudflare worker domain, skip this step, If you want to use your own domain name, on the Workers & Pages page, open the worker you just saved, click 'Triggers' at the top, then 'Add custom domain', setting it to your proxy domain.
 - Now you can directly access https://your-proxy-domain.name/user-your-password/, don't miss the last '/' please. And please replace the domain and password with your own.
@@ -59,7 +59,7 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
 7. Open and modify the config.json file, saving it:
    {
       "proxy_url": "https://your-proxy.domain.name", // This is your proxy server domain, must be https please.
-      "token_prefix": "/user-SetYourPasswordHere/",  // This acts as your site password to prevent unauthorized access. Keep the slashes at the start and end.
+      "token_prefix": "/user-SetYourPasswordHere/",  // This acts as your site password to prevent unauthorized access. Keep the slashes at the start and end. empty password means no password is needed.
       "local_listen_port": 5006, // Do not modify this, to keep it consistent with the previous nginx configuration.
       "description": "Note: The token_prefix acts as the site password. Please set it carefully. The proxy_url combined with the token_prefix forms the access URL."
    }
