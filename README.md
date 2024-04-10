@@ -66,10 +66,10 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
       }
    }
 2. 执行:sudo systecmctl restart nginx
-3. 用户环境下执行下列命令安装node环境, 如果你已经有node环境, 忽略这一步
-   (1)curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+3. 用户环境下执行下列命令安装node v21或者以上版本:
+   (1)curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
    (2)source ~/.bashrc
-   (3)nvm install v18
+   (3)nvm install v21
 4. 执行:git clone https://github.com/netptop/siteproxy.git;
 5. 执行:cd siteproxy;
 6. 测试是否能运行： node bundle.js, 如果没有错误，按ctrl+c结束程序。 

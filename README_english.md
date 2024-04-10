@@ -49,10 +49,10 @@ git clone https://your-proxy-domain.name/user-your-password/https/github.com/the
       }
    }
 2. Execute: sudo systemctl restart nginx
-3. Install Node environment in user space, if you don't already have Node installed:
-   (1) curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-   (2) source ~/.bashrc
-   (3) nvm install v18
+3. Install Node v21 or above version in user space, if you don't already have Node v21 installed:
+   (1)curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+   (2)source ~/.bashrc
+   (3)nvm install v21
 4. Execute: git clone https://github.com/netptop/siteproxy.git;
 5. Execute: cd siteproxy;
 6. Test if it can run: node bundle.js, if there are no errors, end the program with Ctrl+C.
